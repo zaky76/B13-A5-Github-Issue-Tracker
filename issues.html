@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy + tailwind cnd -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Github-Issue-Tracker</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- <style>
+        body {
+            background-color: #1e3144;
+        }
+    </style> -->
+</head>
+
+<body>
+    <header>
+        <div class="bg-white shadow py-1.5 px-1.5 ">
+            <div class="w-[90%] mx-auto  flex justify-between py-0.5 px-0.5">
+                <div class="leftSide flex gap-1.5 items-center ">
+                    <img src="./assets/github-logo.png" class="w-9" alt="">
+                    <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+                </div>
+                <div class="rightSide flex gap-1.5 items-center">
+                    <label class="input">
+                        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                                stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </g>
+                        </svg>
+                        <input id="search-input" type="search" required placeholder="Search" />
+                    </label>
+                    <button class="btn bg-[#4A00FF] text-white">+New Issue</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="buttonSec">
+            <div
+                class="w-[75%] mx-auto mt-12 mb-5 text-center rounded-xl md:text-left lg:text-left py-6 px-6 shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
+                <button onclick="toggleStyle('all-btn')"
+                    class="bg-[#4A00FF] text-white border border-gray-300 rounded  px-6 py-2" id="all-btn">All</button>
+                <button onclick="toggleStyle('open-btn')" class="bg-white border border-gray-300 rounded px-6 py-2"
+                    id="open-btn">Open</button>
+                <button onclick="toggleStyle('closed-btn')" class="bg-white border border-gray-300 rounded px-6 py-2"
+                    id="closed-btn">Closed</button>
+            </div>
+        </section>
+        <section id="totalIssue">
+            <div
+                class="w-[75%] mx-auto  mb-5 text-center rounded-xl md:text-left lg:text-left py-6 px-6 shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
+                <div class="top-sec flex justify-between">
+                    <div class="flex gap-2 items-center">
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <img src="./assets/Aperture.png" alt="">
+                        </div>
+                        <div>
+                            <h2 id="countAllIssue" class="text-2xl text-[#1F2937] font-semibold">50 Issues</h2>
+                            <p>Track and manage your project issues</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 font-sans text-slate-800">
+                        <div class="flex items-center gap-2">
+                            <span class="h-4 w-4 rounded-full bg-[#00a86b]"></span>
+                            <span class="text-lg font-medium">Open</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="h-4 w-4 rounded-full bg-[#a855f7]"></span>
+                            <span class="text-lg font-medium">Closed</span>
+                        </div>
+
+                    </div>
+                </div>
+                <br><br>
+                <div id="allIssue" class="bottom-sec grid gap-5 grid-cols-4 ">
+                    <!-- 1st issue -->
+                    <!-- <div
+                        class="every-issue bg-white p-5 rounded-xl border-t-4 border-[#00a86b] shadow-[0_-8px_15px_-5px_rgba(0,0,0,0.1),8px_0_15px_-5px_rgba(0,0,0,0.1),-8px_0_15px_-5px_rgba(0,0,0,0.1)]">
+
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class=""><img src="./assets/Open-Status.png" alt=""></span>
+                            </div>
+
+                            <h3
+                                class="text-red-500 bg-red-50 py-1 px-4 rounded-full text-sm font-bold tracking-wide uppercase">
+                                HIGH
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h2 class="text-xl font-semibold text-slate-800 leading-tight">
+                                Fix navigation menu on mobile devices
+                            </h2>
+                            <p class="line-clamp-2 text-slate-500 text-sm leading-relaxed">
+                                The navigation menu doesn't collapse properly on mobile devices. Need to fix the
+                                responsive behavior.
+                            </p>
+                        </div>
+
+                        <div class="flex gap-2 mt-4">
+                            <span
+                                class="flex items-center gap-1 px-3 py-1 bg-red-50 text-red-500 border border-red-100 rounded-full text-xs font-semibold">
+                                <span><i class="fa-solid fa-bug"></i></span> BUG
+                            </span>
+                            <span
+                                class="flex items-center gap-1 px-3 py-1 bg-amber-50 text-amber-600 border border-amber-100 rounded-full text-xs font-semibold">
+                                <span><i class="fa-solid fa-life-ring"></i></span> HELP WANTED
+                            </span>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-slate-400 text-sm">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                        </div>
+                    </div> -->
+                    <!-- 2nd issue -->
+                    <!-- <div
+                        class="every-issue bg-white p-5 rounded-xl border-t-4 border-[#a855f7] shadow-[0_-8px_15px_-5px_rgba(0,0,0,0.1),8px_0_15px_-5px_rgba(0,0,0,0.1),-8px_0_15px_-5px_rgba(0,0,0,0.1)]">
+
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class=""><img src="./assets/Closed- Status .png" alt=""></span>
+                            </div>
+
+                            <h3
+                                class="text-red-500 bg-red-50 py-1 px-4 rounded-full text-sm font-bold tracking-wide uppercase">
+                                HIGH
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h2 class="text-xl font-semibold text-slate-800 leading-tight">
+                                Fix navigation menu on mobile devices
+                            </h2>
+                            <p class="line-clamp-2 text-slate-500 text-sm leading-relaxed">
+                                The navigation menu doesn't collapse properly on mobile devices. Need to fix the
+                                responsive behavior.
+                            </p>
+                        </div>
+
+                        <div class="flex gap-2 mt-4">
+                            <span
+                                class="flex items-center gap-1 px-3 py-1 bg-red-50 text-red-500 border border-red-100 rounded-full text-xs font-semibold">
+                                <span><i class="fa-solid fa-bug"></i></span> BUG
+                            </span>
+                            <span
+                                class="flex items-center gap-1 px-3 py-1 bg-amber-50 text-amber-600 border border-amber-100 rounded-full text-xs font-semibold">
+                                <span><i class="fa-solid fa-life-ring"></i></span> HELP WANTED
+                            </span>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-slate-400 text-sm">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                        </div>
+                    </div> -->
+
+
+                </div>
+                <!-- Loading Spinner -->
+                <div id="loadingSpinner" class="h-[60vh] items-center justify-center hidden">
+                    <span class="loading loading-spinner loading-xl"></span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Modal Code -->
+    <dialog id="issue_details_modal" class="modal">
+        <div class="modal-box w-11/12 max-w-2xl">
+            <div id="modal-content">
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn bg-[#4A00FF] text-white">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

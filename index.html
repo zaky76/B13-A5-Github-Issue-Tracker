@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy + tailwind cnd -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Github-Issue-Tracker</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+</head>
+
+<body class="">
+    <main class="">
+        <div
+            class="mt-10 mb-10 px-4 sm:px-7 align-middle w-full max-w-[520px] min-h-fit mx-auto shadow-lg rounded-xl pb-10 border border-gray-100">
+
+            <div class="space-y-1 logo pt-10 flex flex-col items-center justify-center">
+                <img src="./assets/github-logo.png" alt="GitHub Logo" class="w-16 h-16 object-contain">
+                <h2 class="text-[#1F2937] font-semibold text-2xl text-center">GitHub Issues Tracker</h2>
+                <p class="text-center text-gray-500">Sign in to manage your issues</p>
+            </div>
+
+            <div class="form mt-4">
+                <div class="card-body w-full mx-auto p-0">
+                    <fieldset class="fieldset space-y-2">
+                        <label class="w-full label text-[18px] font-semibold">Username</label>
+                        <input id="username" type="text"
+                            class="w-full input input-bordered rounded bg-base-100 p-3 border-gray-300"
+                            placeholder="Enter Username" />
+                        <label class="text-[#4A00FF] text-sm">Default: admin</label>
+
+                        <label class="w-full label font-semibold text-[18px] mt-2">Password</label>
+                        <input id="password" type="password"
+                            class="w-full input input-bordered rounded bg-base-100 p-3 border-gray-300"
+                            placeholder="Enter Password" />
+                        <label class="text-[#4A00FF] text-sm">Default: admin123</label>
+
+                        <button id="sign-btn"
+                            class="btn bg-[#4A00FF] hover:bg-[#3a00cc] text-white mt-6 rounded w-full py-3 transition-colors">
+                            Sign In
+                        </button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div
+                class="divider text-gray-400 my-8 text-sm flex items-center before:flex-1 before:border-t before:border-gray-200 after:flex-1 after:border-t after:border-gray-200 after:ms-4 before:me-4">
+                OR</div>
+
+            <div class="text-center">
+                <p class="mb-2 text-gray-600 font-medium">Demo Credentials:</p>
+                <div class="bg-gray-100 rounded-lg p-4">
+                    <p class="text-gray-700">
+                        <strong>Username:</strong> admin <br>
+                        <strong>Password:</strong> admin123
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="./script/login.js"></script>
+</body>
+
+</html>

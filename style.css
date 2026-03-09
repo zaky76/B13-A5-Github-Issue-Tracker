@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+.card-body {
+    padding: 0px;
+}
