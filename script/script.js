@@ -1,3 +1,4 @@
+// get id in variable
 const allBtn = document.getElementById('all-btn');
 const openBtn = document.getElementById('open-btn');
 const closedBtn = document.getElementById('closed-btn');
@@ -8,7 +9,7 @@ const loadingSpinner = document.getElementById('loadingSpinner');
 
 let allIssuesData = []; 
 
-
+// toggle for three button
 function toggleStyle(id) {
     const buttons = [allBtn, openBtn, closedBtn];
 
