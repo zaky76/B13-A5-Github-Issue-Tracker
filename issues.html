@@ -53,7 +53,7 @@
     <main>
         <section id="buttonSec">
             <div
-                class="w-[75%] mx-auto mt-12 mb-5 text-center rounded-xl md:text-left lg:text-left py-6 px-6 shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
+                class="w-[90%] md:w-[75%] mx-auto mt-12 mb-5 text-center rounded-xl md:text-left lg:text-left py-6 px-6 shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
                 <button onclick="toggleStyle('all-btn')"
                     class="bg-[#4A00FF] text-white border border-gray-300 rounded  px-6 py-2" id="all-btn">All</button>
                 <button onclick="toggleStyle('open-btn')" class="bg-white border border-gray-300 rounded px-6 py-2"
@@ -65,7 +65,7 @@
         <section id="totalIssue">
             <div
                 class="w-[75%] mx-auto  mb-5 text-center rounded-xl md:text-left lg:text-left py-6 px-6 shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
-                <div class="top-sec flex justify-between">
+                <div class="top-sec flex flex-col md:flex-row md:justify-between">
                     <div class="flex gap-2 items-center">
                         <div class="bg-purple-100 p-3 rounded-full">
                             <img src="./assets/Aperture.png" alt="">
@@ -75,15 +75,17 @@
                             <p>Track and manage your project issues</p>
                         </div>
                     </div>
-                    <div class="flex items-center gap-6 font-sans text-slate-800">
+                    <div
+                        class="flex flex-row flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-sans text-slate-800">
+
                         <div class="flex items-center gap-2">
-                            <span class="h-4 w-4 rounded-full bg-[#00a86b]"></span>
-                            <span class="text-lg font-medium">Open</span>
+                            <span class="h-3 w-3 md:h-4 md:w-4 rounded-full bg-[#00a86b]"></span>
+                            <span class="text-base md:text-lg font-medium">Open</span>
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <span class="h-4 w-4 rounded-full bg-[#a855f7]"></span>
-                            <span class="text-lg font-medium">Closed</span>
+                            <span class="h-3 w-3 md:h-4 md:w-4 rounded-full bg-[#a855f7]"></span>
+                            <span class="text-base md:text-lg font-medium">Closed</span>
                         </div>
 
                     </div>
