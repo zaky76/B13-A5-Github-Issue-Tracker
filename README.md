@@ -11,5 +11,9 @@ Answer: The Spread Operator is like opening a sealed package and spreading every
 Answer: map()	goal to transform or modify data. returen will	new modified array. filter() goal to find items that match a criteria & returen new filtered array. forEach() goal to execute a side effect log, save etc. and	returen nothing.
 
 
+4️⃣ What is an arrow function?
+answer: An Arrow Function is a modern, concise way to write functions in JavaScript. Before ES6 we had to use the function keyword every time, which made the code longer and more repetitive. Now, we use the "fat arrow" => syntax.
 
+5️⃣ What are template literals?
+answer: Template Literals are the most comfortable and "human-friendly" way to work with strings (text) in JavaScript. They replace the old method of using single or double quotes. example: We use backticks instead of quotes. This allows us to plug variables directly into a sentence using the ${variable} syntax.
 
